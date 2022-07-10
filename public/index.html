@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Wearcade</title>
+        <script src="bundle.js"></script>
+    </head>
+    <body>
+        <a-scene id="main-scene">
+            <a-camera player position="0 6 0">
+                <a-light type="point" distance="10" color="#aaa"></a-light>
+            </a-camera>
+            <a-entity id="world" world>
+                <a-hexworld id="root" class="center" color="#0ff"></a-hexworld>
+            </a-entity>
+            <a-sky color="#000"></a-sky>
+        </a-scene>
+    </body>
+</html>
