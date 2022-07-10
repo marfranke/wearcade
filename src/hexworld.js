@@ -19,7 +19,7 @@ AFRAME.registerPrimitive('a-hexworld', {
 
 AFRAME.registerComponent('hexworld', {
     schema: {
-        iterations: {type: 'number', default: 5},
+        iterations: {type: 'number', default: 4},
         roughness: {type: 'number', default: 0.75},
         color: {type: 'string', default: '#0f0'},
         glued: {

@@ -49,7 +49,7 @@ AFRAME.registerComponent('player', {
             )) return true;
         if (this.tryRecenterOn(
             'bottom',
-            ['top-right', 'top', 'top-right'],
+            ['top-left', 'top', 'top-right'],
             [
                 {from: 'center', to: 'top'},
                 {from: 'bottom', to: 'center'},
@@ -88,8 +88,10 @@ AFRAME.registerComponent('player', {
 
                 replaceClasses.forEach(replaceClass => {
                     const replacePiece = this.el.sceneEl.querySelector('#world .' + replaceClass.from);
-                    replacePiece.classList.remove(replaceClass.from);
-                    replacePiece.classList.add(replaceClass.to);
+                    if (replacePiece) {
+                        replacePiece.classList.remove(replaceClass.from);
+                        replacePiece.classList.add(replaceClass.to);
+                    }
                 });
                 return true;
             }
