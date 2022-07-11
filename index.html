@@ -1,9 +1,19 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>WeArcade</title>
+        <meta charset="utf-8" />
+        <title>Wearcade</title>
+        <script src="bundle.js"></script>
     </head>
     <body>
-        Site in development. Click <a href="dist/index.html">here</a>.
+        <a-scene id="main-scene">
+            <a-camera player position="0 6 0">
+                <a-light type="point" distance="10" color="#aaa"></a-light>
+                <a-sky color="#000"></a-sky>
+            </a-camera>
+            <a-entity id="world" world>
+                <a-hexworld id="root" class="center" color="#0f0"></a-hexworld>
+            </a-entity>
+        </a-scene>
     </body>
 </html>
