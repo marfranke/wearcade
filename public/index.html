@@ -7,7 +7,7 @@
     </head>
     <body>
         <a-scene id="main-scene">
-            <a-entity id="player" player velocity tracked-movement="controlsTarget: #leftHand; rotationTarget: a-camera" position>
+            <a-entity id="player" player tracked-movement="controlsTarget: #leftHand; rotationTarget: a-camera" wasd-movement>
                 <a-entity id="leftHand" hand-controls="hand: left; handModelStyle: highPoly; color: #ffcccc">
                     <a-text id="debugLeft" value="" position="0 0.2 0"></a-text>
                 </a-entity>

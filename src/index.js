@@ -2,6 +2,7 @@ import 'aframe';
 import './hexworld.js';
 import './velocity.js';
 import './tracked-movement.js';
+import './wasd-movement.js';
 
 AFRAME.registerComponent('player', {
     tick: function () {
