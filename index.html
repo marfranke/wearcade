@@ -7,13 +7,20 @@
     </head>
     <body>
         <a-scene id="main-scene">
-            <a-camera player position="0 6 0">
-                <a-light type="point" distance="10" color="#aaa"></a-light>
+            <a-entity id="player" player velocity tracked-movement="controlsTarget: #leftHand; rotationTarget: a-camera" position>
+                <a-entity id="leftHand" hand-controls="hand: left; handModelStyle: highPoly; color: #ffcccc">
+                    <a-text id="debugLeft" value="" position="0 0.2 0"></a-text>
+                </a-entity>
+                <a-entity id="rightHand" hand-controls="hand: right; handModelStyle: highPoly; color: #ffcccc">
+                    <a-text id="debugRight" value="" position="0 0.2 0"></a-text>
+                </a-entity>
+                <a-camera wasd-controls-enabled="false"></a-camera>
+                <a-light position="0 0.5 0" type="point" distance="10" color="#aaa"></a-light>
                 <a-sky color="#000"></a-sky>
-            </a-camera>
-            <a-entity id="world" world>
-                <a-hexworld id="root" class="center" color="#0f0"></a-hexworld>
             </a-entity>
+            <a-entity id="world" world>
+                <a-hexworld id="root" class="center"></a-hexworld>
+            </a-entity> 
         </a-scene>
     </body>
 </html>
