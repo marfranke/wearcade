@@ -78,7 +78,7 @@ AFRAME.registerComponent('player', {
             const piecePosX = hexWorld.r2xt(pos.x, pos.z);
             const piecePosY = hexWorld.r2yt(pos.x, pos.z);
             const sumPiecePos = piecePosX + piecePosY;
-            if (piecePosX > -hexWorld.mac && piecePosY > -hexWorld.mac && piecePosX < hexWorld.mac && piecePosY < hexWorld.mac && sumPiecePos > -hexWorld.mac && sumPiecePos < hexWorld.mac) {
+            if (piecePosX >= -hexWorld.mac && piecePosY >= -hexWorld.mac && piecePosX < hexWorld.mac && piecePosY < hexWorld.mac && sumPiecePos > -hexWorld.mac && sumPiecePos < hexWorld.mac) {
                 console.log('Moved to ' + className);
 
                 throwAwayClasses.forEach(throwAwayClass => {
