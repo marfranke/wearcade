@@ -1,5 +1,7 @@
 import 'aframe';
 import './hexworld.js';
+import './velocity.js';
+import './tracked-movement.js';
 
 AFRAME.registerComponent('player', {
     tick: function () {
