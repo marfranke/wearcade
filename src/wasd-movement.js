@@ -76,7 +76,6 @@ AFRAME.registerComponent('wasd-movement', {
     onKeyDown: function(event) {
         if (!AFRAME.utils.shouldCaptureKeyEvent(event)) return;
         const code = event.code || KEYCODE_TO_CODE[event.keyCode];
-        console.log(this);
         if (KEYS.indexOf(code) !== -1) this.keys[code] = true;
     },
   

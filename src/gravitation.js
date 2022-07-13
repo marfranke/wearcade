@@ -16,6 +16,5 @@ AFRAME.registerComponent('gravitation', {
         velocity.x += this.data.gravitationX * delta;
         velocity.y += this.data.gravitationY * delta;
         velocity.z += this.data.gravitationZ * delta;
-        console.log(velocity);
     }
 });
