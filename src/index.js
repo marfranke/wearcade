@@ -1,8 +1,10 @@
 import 'aframe';
-import './hexworld.js';
-import './velocity.js';
-import './tracked-movement.js';
-import './wasd-movement.js';
+
+import './gravitation';
+import './hexworld';
+import './velocity';
+import './tracked-movement';
+import './wasd-movement';
 
 AFRAME.registerComponent('player', {
     tick: function () {
@@ -105,8 +107,14 @@ AFRAME.registerComponent('player', {
     setY: function() {
         const pos = this.el.object3D.position;
         const worldCenter = this.el.sceneEl.querySelector('#world .center').components.hexworld;
-        pos.y = worldCenter.r2h(pos.x, pos.z) + 1.6;
-        this.el.setAttribute('position', pos);
+        const minY = worldCenter.r2h(pos.x, pos.z);
+        if (pos.y < minY) {
+            pos.y = minY;
+            const velocity = this.el.getAttribute('velocity');
+            velocity.y = 0;
+            this.el.setAttribute('velocity', velocity);
+            this.el.setAttribute('position', pos);
+        }
     }
 });
 
