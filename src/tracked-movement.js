@@ -39,7 +39,7 @@ AFRAME.registerComponent('tracked-movement', {
         const directionVector = new THREE.Vector3(0, 0, 0);
         directionVector.copy(this.internalVector);
         directionVector.multiplyScalar(this.data.acceleration * delta);
-        const rotation = this.rotationTarget.getAttribute("rotation")
+        const rotation = this.rotationTarget.getAttribute("rotation");
         const rotationEuler = new THREE.Euler(
             this.xRotationFactor * THREE.Math.degToRad(rotation.x),
             this.yRotationFactor * THREE.Math.degToRad(rotation.y),
