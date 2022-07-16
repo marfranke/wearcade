@@ -20,8 +20,8 @@ AFRAME.registerPrimitive('a-hexworld', {
 
 AFRAME.registerComponent('hexworld', {
     schema: {
-        iterations: {type: 'number', default: 4},
-        roughness: {type: 'number', default: 0.75},
+        iterations: {type: 'number', default: 7},
+        roughness: {type: 'number', default: 0.35},
         color: {type: 'string', default: '#4f4'},
         glued: {
             default: [],
