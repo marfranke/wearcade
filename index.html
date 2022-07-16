@@ -7,17 +7,28 @@
     </head>
     <body>
         <a-scene id="main-scene">
-            <a-entity id="player" player tracked-movement="controlsTarget: #leftHand; rotationTarget: a-camera" wasd-movement="rotationTarget: a-camera" gravitation="gravitationY: -6">
-                <a-entity id="leftHand" hand-controls="hand: left; handModelStyle: highPoly; color: #ffcccc">
-                    <a-text id="debugLeft" value="" position="0 0.2 0"></a-text>
+            <a-assets>
+              <a-asset-item id="weapon" src="weapon.glb"></a-asset-item>
+            </a-assets>
+
+            <a-entity id="player" player tracked-movement="controlsTarget: #leftHand; rotationTarget: a-camera" wasd-movement="rotationTarget: a-camera" gravitation>
+                <a-entity id="leftHand" weapon hand-controls="hand: left">
+                    <a-text id="debugLeft" class="debug" value="" position="0 0.2 0"></a-text>
+                    <a-gltf-model class="weapon" src="#weapon">
+                        <a-projectile permanent="true" gravity="0" position="-0.047 0 -0.13"></a-projectile>
+                    </a-gltf-model>
                 </a-entity>
-                <a-entity id="rightHand" hand-controls="hand: right; handModelStyle: highPoly; color: #ffcccc">
-                    <a-text id="debugRight" value="" position="0 0.2 0"></a-text>
+                <a-entity id="rightHand" weapon hand-controls="hand: right">
+                    <a-text id="debugRight" class="debug" value="" position="0 0.2 0"></a-text>
+                    <a-gltf-model rotation="0 0 180" class="weapon" src="#weapon">
+                        <a-projectile permanent="true" gravity="0" position="-0.047 0 -0.13"></a-projectile>
+                    </a-gltf-model>
                 </a-entity>
                 <a-camera wasd-controls-enabled="false" position="0 1.6 0"></a-camera>
-                <a-light position="0 1.6 0" type="point" distance="12" color="#fff"></a-light>
+                <a-light position="0 1.6 0" type="point" distance="50" color="#fff"></a-light>
                 <a-sky color="#000"></a-sky>
             </a-entity>
+
             <a-entity id="world" world>
                 <a-hexworld id="root" class="center"></a-hexworld>
             </a-entity> 
