@@ -4,7 +4,7 @@ AFRAME.registerPrimitive('a-projectile', {
         gravitation: {},
         velocity: {},
         position: {x: 0, y: 0, z: 0},
-        geometry: {primitive: 'sphere', radius: 0.05},
+        geometry: {primitive: 'sphere', segmentsWidth: 18, segmentsHeight: 9, radius: 0.035},
         material: 'color: yellow'
     },
 
@@ -24,17 +24,8 @@ AFRAME.registerComponent('projectile', {
         if (!this.data.invincible) {
             const pos = new THREE.Vector3(0, 0, 0);
             this.el.object3D.getWorldPosition(pos);
-            let minY = 1e10;
-            const worldPieces = this.el.sceneEl.querySelectorAll('#world a-hexworld');
-            worldPieces.forEach(piece => {
-                try {
-                    const y = piece.components.hexworld.r2h(pos.x, pos.z);
-                    if (!isNaN(y)) {
-                        minY = y;
-                    }
-                } catch(e) {}
-            });
-            if (pos.y < minY) {
+            const minY = this.el.sceneEl.querySelector('#world').components.world.getHeight(pos);
+            if (isNaN(minY) || pos.y < minY) {
                 this.el.remove();
                 console.log("Destroy Projectile");
             }
