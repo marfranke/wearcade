@@ -1,4 +1,5 @@
 import 'aframe';
+import 'aframe-extras.animation-mixer';
 
 import './gravitation';
 import './hexworld';

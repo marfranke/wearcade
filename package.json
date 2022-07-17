@@ -18,7 +18,8 @@
   },
   "homepage": "https://github.com/marfranke/wearcade#readme",
   "dependencies": {
-    "aframe": "^1.3.0"
+    "aframe": "^1.3.0",
+    "aframe-extras.animation-mixer": "^6.1.1"
   },
   "devDependencies": {
     "copy-webpack-plugin": "^11.0.0",
