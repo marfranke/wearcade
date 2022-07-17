@@ -1,4 +1,3 @@
-
 const KEYCODE_TO_CODE = {
     '38': 'ArrowUp',
     '37': 'ArrowLeft',

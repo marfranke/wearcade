@@ -1,9 +1,11 @@
-const maxRadius = 0.035;
-const minTrigger = 0.1;
-const minFireRadius = 0.2 * maxRadius;
-
 AFRAME.registerComponent('weapon', {
     dependencies: ['hand-controls'],
+
+    schema: {
+        maxRadius: {type: 'number', default: 0.035},
+        minTrigger: {type: 'number', default: 0.1},
+        minFireRadius: {type: 'number', default: 0.007}
+    },
 
     init: function () {
         this.radius = 0;
