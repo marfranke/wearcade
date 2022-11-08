@@ -3,7 +3,6 @@ const XR2XT_FACTOR = 1/Math.tan(60 * Math.PI / 180);
 const XR2YT_FACTOR = 1/Math.sin(60 * Math.PI / 180);
 
 AFRAME.registerPrimitive('a-hexworld', {
-    dependencies: ['position'],
     defaultComponents: {
         hexworld: {},
         position: {x: 0, y: 0, z: 0},

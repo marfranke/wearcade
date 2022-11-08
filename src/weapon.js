@@ -11,9 +11,9 @@ AFRAME.registerComponent('weapon', {
         this.radius = 0;
 
         this.el.addEventListener('triggerchanged', (event) => {
-            this.radius = Math.max(this.radius, event.detail.value * maxRadius);
+            this.radius = Math.max(this.radius, event.detail.value * this.data.maxRadius);
             this.el.querySelector('a-projectile').setAttribute('radius', this.radius);
-            if (event.detail.value < minTrigger && this.radius >= minFireRadius) {
+            if (event.detail.value < this.data.minTrigger && this.radius >= this.data.minFireRadius) {
                 const object3D = this.el.querySelector('a-projectile').object3D;
                 const pos = new THREE.Vector3(0, 0, 0);
                 const rot = new THREE.Vector3(0, 0, 0);

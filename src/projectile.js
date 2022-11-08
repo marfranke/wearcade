@@ -24,7 +24,7 @@ AFRAME.registerComponent('projectile', {
         if (!this.data.invincible) {
             const pos = new THREE.Vector3(0, 0, 0);
             this.el.object3D.getWorldPosition(pos);
-            const minY = this.el.sceneEl.querySelector('#world').components.world.getHeight(pos);
+            const minY = document.getElementById('world').components.world.getHeight(pos);
             if (isNaN(minY) || pos.y < minY) {
                 this.el.remove();
                 console.log("Destroy Projectile");

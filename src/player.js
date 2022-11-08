@@ -122,7 +122,7 @@ AFRAME.registerComponent('player', {
     setY: function(delta) {
         const pos = new THREE.Vector3(0, 0, 0);
         this.el.object3D.getWorldPosition(pos);
-        const minY = this.el.sceneEl.querySelector('#world').components.world.getHeight(pos);
+        const minY = document.getElementById('world').components.world.getHeight(pos);
         if (pos.y < minY) {
             const velocity = this.el.getAttribute('velocity');
             const heightDiff = minY - pos.y;

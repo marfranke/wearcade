@@ -6,6 +6,7 @@ import './hexworld';
 import './player';
 import './projectile.js';
 import './velocity';
+import './spider';
 import './tracked-movement';
 import './wasd-movement';
 import './weapon';
